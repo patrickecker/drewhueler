@@ -9,6 +9,7 @@
     <title>MN Lake Agents | Welcome</title>
     <link rel="stylesheet" href="./css/w3.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/w3data.js"></script>
 
   </head>
   <body>
@@ -59,126 +60,16 @@
           <h2>SOLD PROPERTIES</h2>
         </div>
         <div class="w3-row">
-          <div class="w3-col m3">
+          <div w3-repeat="solds" class="w3-col m3">
             <div class="w3-card-8 w3-white w3-margin">
-
               <div class="w3-container w3-center">
-                  <div class="w3-section">Excelsior, MN</div>
-                  <img src="img_avatar3.png" alt="Avatar" style="width:80%">
-                  <h5>$1,399,000</h5>
-
-                  <div class="w3-section">
+                <div class="w3-section">{{City}}</div>
+                <img src="./img/{{soldImage}}" alt="{{soldImageAlt}}" style="width:80%">
+                <h5>{{soldPrice}}</h5>
+                <div class="w3-section">
                   <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
                 </div>
               </div>
-
-            </div>
-          </div>
-          <div class="w3-col m3">
-            <div class="w3-card-8 w3-white w3-margin">
-
-              <div class="w3-container w3-center">
-                  <div class="w3-section">Lino Lakes, MN</div>
-                  <img src="img_avatar3.png" alt="Avatar" style="width:80%">
-                  <h5>$530,000</h5>
-
-                  <div class="w3-section">
-                  <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="w3-col m3">
-            <div class="w3-card-8 w3-white w3-margin">
-
-              <div class="w3-container w3-center">
-                  <div class="w3-section">Minnetonka, MN</div>
-                  <img src="img_avatar3.png" alt="Avatar" style="width:80%">
-                  <h5>$143,900</h5>
-
-                  <div class="w3-section">
-                  <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="w3-col m3">
-            <div class="w3-card-8 w3-white w3-margin">
-
-              <div class="w3-container w3-center">
-                  <div class="w3-section">Minnetonka, MN</div>
-                  <img src="img_avatar3.png" alt="Avatar" style="width:80%">
-                  <h5>$211,340</h5>
-
-                  <div class="w3-section">
-                  <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="w3-row">
-          <div class="w3-col m3">
-            <div class="w3-card-8 w3-white w3-margin">
-
-              <div class="w3-container w3-center">
-                  <div class="w3-section">Minnetonka, MN</div>
-                  <img src="img_avatar3.png" alt="Avatar" style="width:80%">
-                  <h5>$215,000</h5>
-
-                  <div class="w3-section">
-                  <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="w3-col m3">
-            <div class="w3-card-8 w3-white w3-margin">
-
-              <div class="w3-container w3-center">
-                  <div class="w3-section">Minnetonka, MN</div>
-                  <img src="img_avatar3.png" alt="Avatar" style="width:80%">
-                  <h5>$284,900</h5>
-
-                  <div class="w3-section">
-                  <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="w3-col m3">
-            <div class="w3-card-8 w3-white w3-margin">
-
-              <div class="w3-container w3-center">
-                  <div class="w3-section">Mound, MN</div>
-                  <img src="img_avatar3.png" alt="Avatar" style="width:80%">
-                  <h5>$204,900</h5>
-
-                  <div class="w3-section">
-                  <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="w3-col m3">
-            <div class="w3-card-8 w3-white w3-margin">
-
-              <div class="w3-container w3-center">
-                  <div class="w3-section">Mound, MN</div>
-                  <img src="img_avatar3.png" alt="Avatar" style="width:80%">
-                  <h5>$625,000</h5>
-
-                  <div class="w3-section">
-                  <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
@@ -276,24 +167,18 @@
 
 
   <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+  var obj = JSON.parse('{ "solds":[ ' +
+      '{ "City" : "Excelsior, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "50,000 SQ FT, 5 BR, 3 BATH", "soldPrice" : "$1,399,000" },' +
+      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
+      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
+      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
+      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
+      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
+      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
+      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" } ]}');
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySolds");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-</script>
+    w3DisplayData("solds", obj);
+  </script>
 
 
 </html>
