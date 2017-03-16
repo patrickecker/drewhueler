@@ -10,18 +10,28 @@
     <link rel="stylesheet" href="./css/w3.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/w3data.js"></script>
-
+    <script>
+        var myObject = { "soldListings":[
+        { "City" : "Excelsior, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "50,000 SQ FT, 5 BR, 3 BATH", "soldPrice" : "$1,399,000" },
+        { "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },
+        { "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },
+        { "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },
+        { "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },
+        { "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },
+        { "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },
+        { "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" } ]};
+    </script>
   </head>
   <body>
     <header>
           <div class="container">
             <div class="w3-row w3-center">
-              952-999-9999 | Minnetonka, MN
+              <a href="tel:952-999-9999">952-999-9999</a> | Minnetonka, MN
             </div>
           </div>
           <div class="container">
             <div id="branding">
-              <h1><span class="highlight">MN</span> Lake Agents</h1>
+              <h1><span class="highlight">Drew</span> Hueler</h1>
             </div>
             <nav>
               <ul>
@@ -33,7 +43,7 @@
           </div>
     </header>
 
-    <section id="solds">
+    <section id="contact">
       <div class="container">
         <div class="buttons w3-half">
           <div class="w3-row w3-padding-8 w3-center">
@@ -60,7 +70,7 @@
           <h2>SOLD PROPERTIES</h2>
         </div>
         <div class="w3-row">
-          <div w3-repeat="solds" class="w3-col m3">
+          <div w3-repeat="soldListings" class="w3-col m3">
             <div class="w3-card-8 w3-white w3-margin">
               <div class="w3-container w3-center">
                 <div class="w3-section">{{City}}</div>
@@ -167,17 +177,7 @@
 
 
   <script>
-  var obj = JSON.parse('{ "solds":[ ' +
-      '{ "City" : "Excelsior, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "50,000 SQ FT, 5 BR, 3 BATH", "soldPrice" : "$1,399,000" },' +
-      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
-      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
-      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
-      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
-      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
-      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" },' +
-      '{ "City" : "Lino Lakes, MN", "soldImage" : "img_avatar3.png", "soldImageAlt" : "", "soldPrice" : "$530,000" } ]}');
-
-    w3DisplayData("solds", obj);
+    w3DisplayData("solds", myObject);
   </script>
 
 
