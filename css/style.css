@@ -55,7 +55,7 @@ header #branding h1{
 }
 
 header nav{
-  float:right;
+  float: right;
   margin-top:10px;
 }
 
@@ -77,6 +77,35 @@ header a:hover{
   background-color: rgba(168, 244, 255, 0.9) !important;
 }
 
+.logo .highlight {
+    padding-left: 15px;
+}
+
+.logo
+{
+  font-size: 3em;
+  margin: 0;
+}
+#header-navigation {
+  position: relative;
+}
+
+nav {
+  position: absolute;
+    bottom: 7px;
+    right: 0;
+}
+
+#contact  .w3-container {
+  padding-right: 0;
+}
+
+
+
+.margin-left{
+  margin-left: 16px;
+  margin-right: 16px;
+}
 
 footer{
   padding:20px;

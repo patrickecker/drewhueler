@@ -31,43 +31,44 @@
               <a href="tel:612-701-3124">612-701-3124</a> | Minnetonka, MN
             </div>
           </div>
-          <div class="container">
+          <div id="header-navigation" class="container">
             <div id="branding">
-              <h1><span class="highlight">Drew</span> Hueler</h1>
+              <p class="logo"><img src="./img/cblogo.jpg" /><span class="highlight">Drew</span> Hueler</p>
             </div>
             <nav>
               <ul>
                 <li class="current"><a href="index.html">Home</a></li>
-                <li><a href="https://www.coldwellbankerhomes.com/mn/wayzata/agent/g-g-andrew-hueler/aid_41332/recent-sales/?groupId=-1&sortId=2&offset=0&z=12&c=44.912733%2C-93.472533">Sold Properties</a></li>
-                <li><a href="listings.html">New Listings</a></li>
+                <li><a href="#solds">Sold Properties</a></li>
+                <li><a href="#new-listings">New Listings</a></li>
               </ul>
             </nav>
           </div>
     </header>
 
     <section id="contact">
+      <div class="w3-container container w3-padding-16">
+
+          <button class="w3-button w3-round-large w3-padding-large w3-green w3-hover-light-green" style="width:33%"><b>Call</b></button>
+          <button class="w3-button w3-round-large w3-padding-large w3-indigo w3-hover-blue" style="width:33%"><b>Message</b></button>
+          <button class="w3-button w3-round-large w3-padding-large w3-lime w3-hover-pale-yellow" style="width:33%"><b>Search</b></button>
+
+      </div>
+    </section>
+
+    <section id="images">
       <div class="container">
-        <div class="buttons w3-half">
-          <div class="w3-row w3-padding-8 w3-center">
-            <button class="w3-button w3-round w3-large">Call</button>
+          <div class="w3-display-container margin-left">
+            <img src="./img/house1.jpg" alt="Elegant" class="jubmo-img" >
+            <div class="w3-display-bottomleft w3-container">
+              <img src="./img/drew.png" >
+            </div>
           </div>
-          <div class="w3-row w3-padding-8 w3-center">
-            <button class="w3-button w3-round w3-large">Message</button>
-          </div>
-          <div class="w3-row w3-padding-8 w3-center">
-            <button class="w3-button w3-round w3-large">Search</button>
-          </div>
-        </div>
-        <div class="drew-image w3-half">
-          <div class="w3-row w3-padding-8 w3-right">
-            <img src="./img/drew.jpg" >
-          </div>
-        </div>
       </div>
     </section>
 
     <section id="solds">
-      <div class="container">
+      <a name="solds"></a>
+      <div class="container w3-padding-64">
         <div class="w3-row w3-center">
           <h2>SOLD PROPERTIES</h2>
         </div>
@@ -85,11 +86,18 @@
             </div>
           </div>
         </div>
+        <div class="w3-row">
+          <div class="w3-center">
+            <button class="w3-button w3-round w3-large">All Sold Properties</button>
+          </div>
+        </div>
       </div>
+
 
     </section>
 
     <section id="listings">
+      <a name="new-listings"></a>
       <div class="container">
         <div class="w3-row w3-center">
           <h2>FEATURED PROPERTIES</h2>
