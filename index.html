@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/w3data.js"></script>
     <script>
-        var myObject = { "soldListings":[
+        var fullSolds = { "soldListings":[
         { "City" : "Orono, MN", "soldImage" : "2715Pence_sm.jpg", "soldImageAlt" : "9,321 SQ FT, 5 BR, 7 BATH", "soldPrice" : "$2,425,000" },
         { "City" : "Excelsior, MN", "soldImage" : "430Lafayette_sm.jpg", "soldImageAlt" : "4,146 SQ FT, 6 BR, 4 BATH", "soldPrice" : "$1,399,000" },
         { "City" : "Orono, MN", "soldImage" : "2565Kelly_sm.jpg", "soldImageAlt" :  "3,333 SQ FT, 4 BR, 3 BATH", "soldPrice" : "$1,345,000" },
@@ -22,12 +22,19 @@
         { "City" : "Minnetonka, MN", "soldImage" : "17137Sandy_sm.jpg", "soldImageAlt" : "1,480 SQ FT, 2 BR, 2 BATH", "soldPrice" : "$215,000" },
         { "City" : "Minnetonka, MN", "soldImage" : "4927Bayswater_sm.jpg", "soldImageAlt" : "1,330 SQ FT, 2 BR, 2 BATH", "soldPrice" : "$211,340" },
       ]};
+
+      var mobileSolds = { "soldListings":[
+        { "City" : "Orono, MN", "soldImage" : "2715Pence_sm.jpg", "soldImageAlt" : "9,321 SQ FT, 5 BR, 7 BATH", "soldPrice" : "$2,425,000" },
+        { "City" : "Excelsior, MN", "soldImage" : "430Lafayette_sm.jpg", "soldImageAlt" : "4,146 SQ FT, 6 BR, 4 BATH", "soldPrice" : "$1,399,000" },
+        { "City" : "Orono, MN", "soldImage" : "2565Kelly_sm.jpg", "soldImageAlt" :  "3,333 SQ FT, 4 BR, 3 BATH", "soldPrice" : "$1,345,000" },
+        { "City" : "Mound, MN", "soldImage" : "5233Bartlett_sm.jpg", "soldImageAlt" : "1,910 SQ FT, 4 BR, 2 BATH", "soldPrice" : "$625,000" },
+      ]};
     </script>
   </head>
   <body>
     <header>
           <div class="container">
-            <div class="w3-row w3-center">
+            <div class="w3-row w3-center" id="upper-navigation">
               <a href="tel:612-701-3124">612-701-3124</a> | Minnetonka, MN
             </div>
           </div>
@@ -37,38 +44,56 @@
             </div>
             <nav>
               <ul>
-                <li class="current"><a href="index.html">Home</a></li>
-                <li><a href="#solds">Sold Properties</a></li>
-                <li><a href="#new-listings">New Listings</a></li>
+                <li class="current w3-mobile"><a href="index.html">Home</a></li>
+                <li class="w3-mobile"><a href="#solds">Sold Properties</a></li>
+                <li class="w3-mobile"><a href="#new-listings">New Listings</a></li>
               </ul>
             </nav>
           </div>
     </header>
 
     <section id="contact">
-      <div class="w3-container container w3-padding-16">
+      <div class="w3-container  container w3-padding-16">
+        <div class="w3-row">
+          <div class="w3-third w3-padding-small">
+            <button class="w3-button w3-round-large w3-block w3-green w3-hover-light-green"><b>Call</b></button>
+          </div>
+          <div class="w3-third w3-padding-small">
+            <button class="w3-button w3-round-large w3-block w3-indigo w3-hover-blue"><b>Message</b></button>
+          </div>
+          <div class="w3-third w3-padding-small">
+            <button class="w3-button w3-round-large w3-block w3-lime w3-hover-pale-yellow"><b>Search</b></button>
+          </div>
+        </div>
 
-          <button class="w3-button w3-round-large w3-padding-large w3-green w3-hover-light-green" style="width:33%"><b>Call</b></button>
-          <button class="w3-button w3-round-large w3-padding-large w3-indigo w3-hover-blue" style="width:33%"><b>Message</b></button>
-          <button class="w3-button w3-round-large w3-padding-large w3-lime w3-hover-pale-yellow" style="width:33%"><b>Search</b></button>
+
+
 
       </div>
     </section>
 
-    <section id="images">
+    <section id="images" class="w3-hide-small">
       <div class="container">
           <div class="w3-display-container margin-left">
-            <img src="./img/house1.jpg" alt="Elegant" class="jubmo-img" >
+            <img src="./img/house1.jpg" alt="Elegant" class="jubmo-img"  style="width:100%">
             <div class="w3-display-bottomleft w3-container">
-              <img src="./img/drew.png" >
+              <div class="w3-row">
+                <img src="./img/drew.png" class="drew-image" />
+              </div>
             </div>
           </div>
       </div>
     </section>
 
-    <section id="solds">
-      <a name="solds"></a>
-      <div class="container w3-padding-64">
+    <section id="mobile-drew" class="w3-hide-large  w3-hide-medium">
+      <div class="container">
+        <img src="./img/drew.png" >
+      </div>
+    </section>
+
+    <a name="solds"></a>
+    <section id="fullSolds" class="w3-hide-small">
+      <div class="container w3-padding-32">
         <div class="w3-row w3-center">
           <h2>SOLD PROPERTIES</h2>
         </div>
@@ -92,13 +117,38 @@
           </div>
         </div>
       </div>
+    </section>
 
-
+    <section id="mobileSolds" class="w3-hide-large  w3-hide-medium">
+      <div class="container w3-padding-16">
+        <div class="w3-row w3-center">
+          <h2>SOLD PROPERTIES</h2>
+        </div>
+        <div class="w3-row">
+          <div w3-repeat="soldListings" class="w3-col m3">
+            <div class="w3-card-8 w3-white w3-margin">
+              <div class="w3-container w3-center">
+                <div class="w3-section">{{City}}</div>
+                <img src="./img/{{soldImage}}" alt="{{soldImageAlt}}" style="width:80%">
+                <h5>{{soldPrice}}</h5>
+                <div class="w3-section">
+                  <span class="w3-tag w3-small w3-padding w3-red">SOLD!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w3-row">
+          <div class="w3-center">
+            <button class="w3-button w3-round w3-large">All Sold Properties</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="listings">
       <a name="new-listings"></a>
-      <div class="container">
+      <div class="container w3-padding-64">
         <div class="w3-row w3-center">
           <h2>FEATURED PROPERTIES</h2>
         </div>
@@ -174,12 +224,28 @@
       </div>
     </section>
 
-    <footer>
 
-      <form>
-        <button class="button_call" type="button">Call</button>
-        <button class="button_message" type="button">Message</button>
-      </form>
+    <section id="footer-contact">
+      <div class="w3-container  container w3-padding-16">
+        <div class="w3-row">
+          <div class="w3-third w3-padding-small">
+            <button class="w3-button w3-round-large w3-block w3-green w3-hover-light-green"><b>Call</b></button>
+          </div>
+          <div class="w3-third w3-padding-small">
+            <button class="w3-button w3-round-large w3-block w3-indigo w3-hover-blue"><b>Message</b></button>
+          </div>
+          <div class="w3-third w3-padding-small">
+            <button class="w3-button w3-round-large w3-block w3-lime w3-hover-pale-yellow"><b>Search</b></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+      </div>
+
+    <footer>
       <p>MN Lake Agents, Copyright &copy; 2017</p>
     </footer>
 
@@ -187,7 +253,8 @@
 
 
   <script>
-    w3DisplayData("solds", myObject);
+    w3DisplayData("fullSolds", fullSolds);
+    w3DisplayData("mobileSolds", mobileSolds);
   </script>
 
 
